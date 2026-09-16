@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام العمل | المستشار النظامي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- <div class="top-strip">
+        <div class="page-width top-strip-inner">
+            <span>منصة الاستعلام عن الأنظمة السعودية</span>
+            <span class="top-status">خدمة بحث قانونية</span>
+        </div>
+    </div> -->
+
+    <!-- <header class="site-header">
+        <div class="page-width header-inner">
+            <a class="brand" href="/" aria-label="الصفحة الرئيسية">
+                <span class="brand-mark">ن</span>
+                <span>
+                    <strong>بوابة الأنظمة</strong>
+                    <small>المملكة العربية السعودية</small>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="التنقل الرئيسي">
+                <a class="active" href="/">الاستعلام النظامي</a>
+                <span class="nav-divider"></span>
+                <span class="nav-note">نظام العمل</span>
+            </nav>
+            <button class="text-size" type="button" aria-label="تكبير النص">ع+ <span>حجم النص</span></button>
+        </div>
+    </header> -->
+
+    <main class="page-width page-content">
+        <div class="breadcrumb"><a href="/">الرئيسية</a><span>/</span><span>نظام العمل</span></div>
+
+        <section class="law-heading">
+            <div>
+                <p class="eyebrow">المستشار النظامي</p>
+                <h1>نظام العمل</h1>
+                <p class="heading-description">استعلم عن الأحكام والحقوق والالتزامات الواردة في نظام العمل السعودي.</p>
+            </div>
+            <div class="law-badge"><span class="badge-dot"></span> نظام ساري</div>
+        </section>
+
+        <div class="gold-rule"></div>
+
+        <section class="search-panel" aria-labelledby="search-title">
+            <div class="panel-heading">
+                <div>
+                    <span class="section-kicker">البحث في النظام</span>
+                    <h2 id="search-title">اكتب استفسارك النظامي</h2>
+                </div>
+                <!-- <span class="panel-index">استعلام رقم 01</span> -->
+            </div>
+            <label for="question">السؤال</label>
+            <textarea id="question" placeholder="مثال: ما حقوق العامل عند إنهاء عقد العمل؟"></textarea>
+            <div class="search-actions">
+                <p>تعتمد الإجابة على النصوص النظامية المسترجعة من قاعدة المعرفة.</p>
+                <button id="askButton" type="button" onclick="askQuestion()"><span>بحث في النظام</span><b>←</b></button>
+            </div>
+            <div id="loading" class="loading" role="status" aria-label="جاري البحث وتحليل النصوص النظامية">
+                <div class="loader"></div>
+            </div>
+            <div id="error" class="error" role="alert"></div>
+        </section>
+
+        <section id="answer" class="result-document" style="display:none;" aria-live="polite">
+            <div class="document-bar"><span>نتيجة الاستعلام</span><span>نظام العمل</span></div>
+            <div class="document-body">
+                <p class="section-kicker">الإجابة النظامية</p>
+                <div class="answer-text"></div>
+            </div>
+        </section>
+
+        <section id="sources" class="sources-section" style="display:none;">
+            <div class="sources-heading">
+                <div>
+                    <span class="section-kicker">المراجع النظامية</span>
+                    <h2>النصوص ذات الصلة</h2>
+                </div>
+                <span class="source-count">مصادر الاستعلام</span>
+            </div>
+            <div id="sourceList" class="source-list"></div>
+        </section>
+    </main>
+
+    
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
